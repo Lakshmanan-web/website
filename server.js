@@ -27,10 +27,8 @@ app.use(cors({
 
 app.use(express.json());
 
-const authRoutes = require('./routes/auth');
 const casesRoutes = require('./routes/cases');
 
-app.use('/', authRoutes);
 app.use('/', casesRoutes);
 
 // Health check route
@@ -50,7 +48,6 @@ app.get('/', (req, res) => {
     version: '1.0.0',
     endpoints: {
       health: '/health',
-      googleLogin: '/google-login',
       cases: '/cases'
     }
   });
