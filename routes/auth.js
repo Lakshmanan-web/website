@@ -3,7 +3,7 @@ const router = express.Router();
 const { jwtDecode } = require('jwt-decode');
 const User = require('../models/User');
 
-const adminEmails = ["corvuxaurea@gmail.com"];
+const adminEmails = ["backcaseculturestore@gmail.com"];
 
 router.post('/google-login', async (req, res) => {
   const { token } = req.body;
