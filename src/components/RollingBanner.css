@@ -1,0 +1,18 @@
+@keyframes rolling-banner {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+.animate-rolling-banner {
+  position: absolute;
+  animation: rolling-banner 22s linear infinite;
+  will-change: left;
+}
+
+.animate-rolling-banner:hover {
+  animation-play-state: paused;
+} 

@@ -36,3 +36,70 @@
     transform: rotate(360deg);
   }
 }
+
+/* Enhanced Search Dropdown Styles */
+.search-container {
+  position: relative;
+}
+
+.search-container input:focus {
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+}
+
+/* Dropdown animation */
+.search-container .absolute {
+  animation: dropdownFadeIn 0.2s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .search-container .absolute {
+    max-height: 50vh;
+  }
+  
+  .search-container button {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Hover effects for suggestions */
+.search-container button:hover {
+  transform: translateX(2px);
+}
+
+/* Focus styles for accessibility */
+.search-container button:focus {
+  outline: 2px solid #fbbf24;
+  outline-offset: -2px;
+}
+
+/* Scrollbar styling for dropdown */
+.search-container .overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-container .overflow-y-auto::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.search-container .overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.search-container .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
