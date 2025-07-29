@@ -16,7 +16,7 @@ Google OAuth 2.0 authentication implemented using @react-oauth/google for the fr
 ```tsx
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
-<GoogleOAuthProvider clientId="921648397743-crqvel60v6d6knnv83p8nant7hn53eqm.apps.googleusercontent.com">
+<GoogleOAuthProvider clientId="488390902124-ru63gdprvhsvpcqmpssd0d4s9926jo37.apps.googleusercontent.com">
   <App />
 </GoogleOAuthProvider>
 ```
