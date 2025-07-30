@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Profile from './components/Profile';
 import Admin from './components/Admin';
 import Shop from './components/Shop';
+import { AuthProvider } from './context/AuthContext';
 
 // Type for cart items
 export type CartItem = {
@@ -94,46 +95,48 @@ function App() {
 
   return (
     <GoogleOAuthProvider clientId="293402160809-3juc0vnk5fifrcvgfujb6n6nd230tkr9.apps.googleusercontent.com">
-      <div className="min-h-screen bg-gray-50 flex flex-col">
-        <Routes>
-          {/* Home Page Route */}
-          <Route path="/" element={
-            <>
-              <Header />
-              <SearchSection
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
-                onFilterToggle={handleFilterToggle}
-                isFilterOpen={isFilterOpen}
-              />
-              <RollingBanner />
-              <MainContent
-                addToCart={addToCart}
-                searchTerm={searchTerm}
-                isFilterOpen={isFilterOpen}
-                setIsFilterOpen={setIsFilterOpen}
-              />
-              <CartIcon 
-                cart={cart} 
-                removeFromCart={removeFromCart}
-                animation={cartAnimation}
-              />
-              
-              <main className="container mx-auto px-4 py-8 flex-1" />
-              <Footer />
-            </>
-          } />
-          
-          {/* Profile Page Route */}
-          <Route path="/profile" element={<Profile />} />
-          
-          {/* Admin Page Route */}
-          <Route path="/admin" element={<Admin />} />
-          
-          {/* Shop Page Route */}
-          <Route path="/shop" element={<Shop />} />
-        </Routes>
-      </div>
+      <AuthProvider>
+        <div className="min-h-screen bg-gray-50 flex flex-col">
+          <Routes>
+            {/* Home Page Route */}
+            <Route path="/" element={
+              <>
+                <Header />
+                <SearchSection
+                  searchTerm={searchTerm}
+                  setSearchTerm={setSearchTerm}
+                  onFilterToggle={handleFilterToggle}
+                  isFilterOpen={isFilterOpen}
+                />
+                <RollingBanner />
+                <MainContent
+                  addToCart={addToCart}
+                  searchTerm={searchTerm}
+                  isFilterOpen={isFilterOpen}
+                  setIsFilterOpen={setIsFilterOpen}
+                />
+                <CartIcon 
+                  cart={cart} 
+                  removeFromCart={removeFromCart}
+                  animation={cartAnimation}
+                />
+                
+                <main className="container mx-auto px-4 py-8 flex-1" />
+                <Footer />
+              </>
+            } />
+            
+            {/* Profile Page Route */}
+            <Route path="/profile" element={<Profile />} />
+            
+            {/* Admin Page Route */}
+            <Route path="/admin" element={<Admin />} />
+            
+            {/* Shop Page Route */}
+            <Route path="/shop" element={<Shop />} />
+          </Routes>
+        </div>
+      </AuthProvider>
     </GoogleOAuthProvider>
   );
 }

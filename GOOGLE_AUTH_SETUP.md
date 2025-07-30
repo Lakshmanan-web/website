@@ -16,13 +16,16 @@ Google OAuth 2.0 authentication implemented using @react-oauth/google for the fr
 ## Implementation
 
 ### 1. GoogleOAuthProvider Setup
-Wrap your app with GoogleOAuthProvider in `src/App.tsx`:
+Wrap your app with GoogleOAuthProvider and AuthProvider in `src/App.tsx`:
 
 ```tsx
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import { AuthProvider } from './context/AuthContext';
 
-<GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
-  {/* Your app components */}
+<GoogleOAuthProvider clientId="293402160809-3juc0vnk5fifrcvgfujb6n6nd230tkr9.apps.googleusercontent.com">
+  <AuthProvider>
+    {/* Your app components */}
+  </AuthProvider>
 </GoogleOAuthProvider>
 ```
 
@@ -41,7 +44,7 @@ The `LoginButton` component handles Google OAuth flow:
 ```tsx
 import LoginButton from './components/LoginButton';
 
-<LoginButton onUserChange={handleUserChange} />
+<LoginButton />
 ```
 
 ### 4. Backend Authentication Routes

@@ -1,24 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import logoImg from '../photo/logo.jpg';
 import LoginButton from './LoginButton';
+import { useAuth } from '../context/AuthContext';
 
 const Header = () => {
-  const [user, setUser] = useState(null);
+  const { user } = useAuth();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const savedUser = localStorage.getItem('user');
-    if (savedUser) {
-      try {
-        const userData = JSON.parse(savedUser);
-        setUser(userData);
-      } catch (error) {
-        console.error('Error parsing saved user:', error);
-        localStorage.removeItem('user');
-      }
-    }
-  }, []);
 
   const handleProfileClick = () => {
     if (user?.isAdmin) {
@@ -27,8 +15,6 @@ const Header = () => {
       navigate('/profile');
     }
   };
-
-
 
   return (
     <header className="bg-gradient-to-b from-cyan-100 to-pista shadow-sm py-10 px-4 relative">
@@ -43,7 +29,7 @@ const Header = () => {
             Profile
           </button>
         )}
-        <LoginButton onUserChange={handleUserChange} />
+        <LoginButton />
       </div>
 
       <div className="max-w-4xl mx-auto text-center">

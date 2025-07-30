@@ -3,11 +3,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 
-interface LoginButtonProps {
-  onUserChange?: (user: any) => void;
-}
-
-const LoginButton: React.FC<LoginButtonProps> = ({ onUserChange }) => {
+const LoginButton: React.FC = () => {
   const { login, logout, user } = useAuth();
 
   const handleSuccess = async (credentialResponse: any) => {
@@ -29,10 +25,7 @@ const LoginButton: React.FC<LoginButtonProps> = ({ onUserChange }) => {
         // Update auth context
         login(userData);
         
-        // Notify parent component if callback provided
-        if (onUserChange) {
-          onUserChange(userData);
-        }
+
         
         console.log('User logged in successfully:', userData);
       }
@@ -49,9 +42,6 @@ const LoginButton: React.FC<LoginButtonProps> = ({ onUserChange }) => {
 
   const handleLogout = () => {
     logout();
-    if (onUserChange) {
-      onUserChange(null);
-    }
     console.log('User logged out');
   };
 
