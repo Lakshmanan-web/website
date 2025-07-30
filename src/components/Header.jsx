@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logoImg from '../photo/logo.jpg';
+import LoginButton from './LoginButton';
 
 const Header = () => {
   const [user, setUser] = useState(null);
@@ -31,7 +32,7 @@ const Header = () => {
 
   return (
     <header className="bg-gradient-to-b from-cyan-100 to-pista shadow-sm py-10 px-4 relative">
-      {/* Profile Button - Top Right */}
+      {/* Login Button and Profile Button - Top Right */}
       <div className="absolute top-4 right-4 flex items-center gap-3">
         {user && (
           <button
@@ -42,6 +43,7 @@ const Header = () => {
             Profile
           </button>
         )}
+        <LoginButton onUserChange={handleUserChange} />
       </div>
 
       <div className="max-w-4xl mx-auto text-center">
