@@ -93,7 +93,7 @@ function App() {
   const handleFilterToggle = () => setIsFilterOpen((open) => !open);
 
   return (
-    <GoogleOAuthProvider clientId="488390902124-ru63gdprvhsvpcqmpssd0d4s9926jo37.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="293402160809-3juc0vnk5fifrcvgfujb6n6nd230tkr9.apps.googleusercontent.com">
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <Routes>
           {/* Home Page Route */}

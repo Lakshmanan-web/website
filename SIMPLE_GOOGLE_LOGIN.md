@@ -22,7 +22,7 @@ Wrap your app with GoogleOAuthProvider in `src/index.tsx`:
 ```tsx
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
-<GoogleOAuthProvider clientId="921648397743-crqvel60v6d6knnv83p8nant7hn53eqm.apps.googleusercontent.com">
+<GoogleOAuthProvider clientId="293402160809-3juc0vnk5fifrcvgfujb6n6nd230tkr9.apps.googleusercontent.com">
   <App />
 </GoogleOAuthProvider>
 ```

@@ -82,6 +82,8 @@ The User model in `models/User.js` stores:
 ### 2. Update Client ID
 Replace `YOUR_GOOGLE_CLIENT_ID` in `src/App.tsx` with your actual Client ID.
 
+**Current Client ID**: `293402160809-3juc0vnk5fifrcvgfujb6n6nd230tkr9.apps.googleusercontent.com`
+
 ## Environment Variables
 
 Create a `.env` file in the root directory:

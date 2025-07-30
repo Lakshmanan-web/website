@@ -37,7 +37,7 @@ Set these environment variables on your hosting platform:
 ```env
 NODE_ENV=production
 JWT_SECRET=your-super-secure-jwt-secret-key
-GOOGLE_CLIENT_ID=921648397743-crqvel60v6d6knnv83p8nant7hn53eqm.apps.googleusercontent.com
+GOOGLE_CLIENT_ID=293402160809-3juc0vnk5fifrcvgfujb6n6nd230tkr9.apps.googleusercontent.com
 MONGO_URI=your-production-mongodb-connection-string
 ```
 
@@ -54,7 +54,7 @@ Ensure your `src/App.tsx` uses the production Client ID:
 ```tsx
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
-<GoogleOAuthProvider clientId="921648397743-crqvel60v6d6knnv83p8nant7hn53eqm.apps.googleusercontent.com">
+<GoogleOAuthProvider clientId="293402160809-3juc0vnk5fifrcvgfujb6n6nd230tkr9.apps.googleusercontent.com">
   {/* Your app components */}
 </GoogleOAuthProvider>
 ```
